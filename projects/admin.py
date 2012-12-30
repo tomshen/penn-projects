@@ -12,4 +12,4 @@ class ProjectAdmin(admin.ModelAdmin):
     search_fields = ['name']
     date_hierarchy = 'sub_date'
 
-admin.site.register(Project, PollAdmin)
+admin.site.register(Project, ProjectAdmin)
