@@ -11,6 +11,6 @@ def index(request):
     })
     return HttpResponse(t.render(c))
 
-def display(request, project_id):
+def projectdisplay(request, project_id):
     p = get_object_or_404(Project, pk=project_id)
-    return render_to_response('projects/display.html', {'project': p})
+    return render_to_response('projects/projectdisplay.html', {'project': p})

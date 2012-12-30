@@ -6,7 +6,6 @@ class ProjectAdmin(admin.ModelAdmin):
         (None,              {'fields':['name']}),
         ('Other information',{'fields':['sub_date'], 'classes':['collapse']}),
     ]
-    inlines = [ChoiceInline]
     list_display = ('name', 'authors', 'sub_date')
     list_filter = ['sub_date']
     search_fields = ['name']
