@@ -43,12 +43,14 @@
 					<div class = "row-fluid">
 						{% if latest_projects %}
 						        {% for project in latest_projects %}
-						        <div class = "span2">
-									<a href="/projects/{{ project.id }}/"><img src="http://i.imgur.com/XYgpT.jpg"></a>
-									<div class="caption">
-										<h5>{{ project.name }}</h5>
-								    </div>
-								</div>
+						        <a href="/projects/{{ project.id }}/">
+							        <div class = "span2">
+										<img src="http://i.imgur.com/XYgpT.jpg">
+										<div class="caption">
+											<h5>{{ project.name }}</h5>
+									    </div>
+									</div>
+								</a>
 						        {% endfor %}
 						{% else %}
 						    <h1>No projects are available.</h1>
