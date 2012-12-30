@@ -11,3 +11,6 @@ class Project(models.Model):
 	album_url = models.URLField()
 	description = models.TextField(max_length=200)
 	source_url = models.URLField()
+
+	def __unicode__(self):
+		return self.name
