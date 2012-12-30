@@ -59,7 +59,8 @@ iframe{
 	
 }
 
-button{
-	padding-right: 15px;
+button !important{
+	height: 64px;
+	padding: 5px 10px;
 	margin-right: 15px;
 }
