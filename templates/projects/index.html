@@ -61,16 +61,3 @@
    	 	<script src="js/bootstrap.min.js"> </script>
 	</body>
 </html>
-
-
-
-
-{% if latest_projects %}
-    <ul>
-        {% for project in latest_projects %}
-            <li><a href="/projects/{{ project.id }}/">{{ project.name}}</a></li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No projects are available.</p>
-{% endif %}
