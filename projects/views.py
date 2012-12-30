@@ -1,10 +1,10 @@
 from django.template import Context, loader
-from polls.models import Poll
+from projects.models import Project
 from django.http import HttpResponse, Http404
 from django.shortcuts import render_to_response, get_object_or_404
 
 def index(request):
-    latest_projects = Poll.objects.all().order_by('-pub_date')[:5]
+    latest_projects = Project.objects.all().order_by('-sub_date')[:5]
     t = loader.get_template('projects/index.html')
     c = Context({
         'latest_projects': latest_projects,
