@@ -13,6 +13,9 @@ body {
 }
 
 #picture_tiles .span2{
+	padding-bottom : 20px;
+    margin-left: 2.564102564102564%;
+	width: 14.52991452991453%;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
@@ -26,11 +29,14 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0a0a0', endColorstr='#f0eded',GradientType=0 ); /* IE6-9 */
 }
 
+
+
 #picture_tiles .caption {
 	text-align: center;
 	text-decoration: none;
 	color: #5C5C5C;
 	font-size: 125%;
+	width:100%;
 }
 
 #picture_tiles .caption:hover {
@@ -43,12 +49,13 @@ body {
 h1{
 	margin-top: 0;
 	padding-bottom: 0;
+	margin-bottom: 0;
 }
 
 #authors {
 	padding-left: 40px;
 	padding-bottom: 15px;
-	line-height: 15px;
+	margin-top: 0px;
 }
 
 .row-fluid p, .row-fluid h6{
@@ -65,4 +72,9 @@ iframe{
 button{
 	height: 64px;
 	margin-right: 15px;
+}
+
+.first_showing{
+	margin-left : 0%;
+	font-size: 500px;
 }
