@@ -11,3 +11,5 @@ class ProjectAdmin(admin.ModelAdmin):
     list_filter = ['sub_date']
     search_fields = ['name']
     date_hierarchy = 'sub_date'
+
+admin.site.register(Project, PollAdmin)
