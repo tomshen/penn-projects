@@ -1,3 +1,70 @@
+<hmtl>
+	<head>
+		<meta charset="utf-8">
+	    <title>Penn Projects</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="A showcase for cool projects from the geeks at University of Pennsylvania.">
+	    <meta name="author" content="Ian Sibner">
+	     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+	     <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	    <link href="css/style.css" rel="stylesheet">
+	    
+			
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="navbar-inner">
+	        <div class="container-fluid">
+	          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="brand" href="./index.html">Penn Projects</a>
+	          <div class="nav-collapse collapse">
+	            <ul class="nav">
+	              <li class="active">
+	                <a href="./index.html">Home</a>
+	              </li>
+	              <li class="">
+	                <a href="./getting-started.html">About DinPhil</a>
+	              </li>
+	              <li class="">
+	                <a href="./scaffolding.html">Submit a Project</a>
+	              </li>
+	            </ul>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+
+		<div class = "container-fluid" id="picture_tiles">
+			
+					<div class = "row-fluid">
+						{% if latest_projects %}
+						        {% for project in latest_projects %}
+						        <div class = "span2">
+									<a href="/projects/{{ project.id }}/"><img src="http://i.imgur.com/XYgpT.jpg"></a>
+									<div class="caption">
+										<h5>{{ project.name }}</h5>
+								    </div>
+								</div>
+						        {% endfor %}
+						{% else %}
+						    <h1>No projects are available.</h1>
+						{% endif %}
+					</div>
+		</div>
+
+
+		<script src="http://code.jquery.com/jquery-latest.js"> </script>
+   	 	<script src="js/bootstrap.min.js"> </script>
+	</body>
+</html>
+
+
+
+
 {% if latest_projects %}
     <ul>
         {% for project in latest_projects %}
