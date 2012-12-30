@@ -51,9 +51,10 @@ h1{
 	line-height: 15px;
 }
 
-.row-fluid p{
+.row-fluid p, .row-fluid h6{
 	padding-left: 40px;
 }
+
 
 iframe{
 	padding-left : 3.67% ;
