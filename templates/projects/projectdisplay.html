@@ -15,16 +15,16 @@
 		<div class="navbar navbar-inverse navbar-fixed-top">
 	      <div class="navbar-inner">
 	        <div class="container-fluid">
-	          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
-	          </button>
-	          <a class="brand" href="../../">Penn Projects</a>
+          	  </a>
+	          <a class="brand" href="/../">Penn Projects</a>
 	          <div class="nav-collapse collapse">
 	            <ul class="nav">
 	              <li class="">
-	                <a href="../../">Home</a>
+	                <a href="/../">Home</a>
 	              </li>
 	              <li class="">
 	                <a href="./getting-started.html">About DinPhil</a>
@@ -40,12 +40,13 @@
 
 		<div class = "container">
 			<div class = "row-fluid">
+				<a style = "float:right" href = "project.demo_url"><button class="btn btn-large btn-primary" type="button">View Demo</button></a>
 				<a style = "float:right" href = "{{project.source_url}}"><img src = "http://i.imgur.com/UMB5c.png" height = "64px" width = "64px"></a>
 				<h1>{{project.name}}</h1>
 
 				<h3 id = "authors">By {{project.authors}}. Submitted {{project.sub_date}}</h3>
 				<h3>{{project.pitch}}</h3>
-				<a class = "demo-url" href = "{{project.demo_url}}"><p>View the demo!</p></a>
+				<a class = "demo-url" href = "{{project.demo_url}}"><p>Check out the demo here!</p></a>
 				<p class = "description">{{project.description}}</p>
 				<iframe class="imgur-album" style = "padding-left : 40px ;" width="1090px" height="550" frameborder = "0" src="{{project.album_url}}/embed"></iframe>
 			</div>
