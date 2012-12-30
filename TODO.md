@@ -2,8 +2,8 @@ Ian
 *Add an "About DinPhil" page and link it to the others
 *Use Tom's submission form to create an HTML page
 *Pull the cover image for each project on the main page
-*Format the main page so it looks good with n submissions
 *Add a favicon
+*Submit the finished product to the DP
 
 
 Tom
