@@ -48,25 +48,6 @@
 			    <h1>No projects are available.</h1>
 			{% endif %}
 		</div>
-		<div class = "container-fluid" id="picture_tiles">
-			
-					<div class = "row-fluid">
-						{% if latest_projects %}
-						        {% for project in latest_projects %}
-						        <a href="/projects/{{ project.id }}/">
-							        <div class = "span2">
-										<img src="http://i.imgur.com/XYgpT.jpg">
-										<div class="caption">
-											<h5>{{ project.name }}</h5>
-									    </div>
-									</div>
-								</a>
-						        {% endfor %}
-						{% else %}
-						    <h1>No projects are available.</h1>
-						{% endif %}
-					</div>
-		</div>
 
 
 		<script src="http://code.jquery.com/jquery-latest.js"> </script>
