@@ -4,6 +4,7 @@ Ian
 *Pull the cover image for each project on the main page
 *Add a favicon
 *Submit the finished product to the DP
+*Push Pinterest JQuery Plugin
 
 
 Tom
