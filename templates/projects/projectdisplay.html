@@ -40,14 +40,14 @@
 
 		<div class = "container">
 			<div class = "row-fluid">
-				<a id ="project_source" class = "pull-right" href = "{{project.source_url}}"><img src = "http://i.imgur.com/UMB5c.png" height = "64px" width = "64px"></a>
-				<a class = "pull-right" href = "{{project.demo_url}}" ><button class="btn btn-large btn-primary" type="button" style = "padding : 5px 10px">View Demo</button></a>
-				<h1>{{project.name}}</h1>
+				{% if project.source_url %}<a id ="project_source" class = "pull-right" href = "{{project.source_url}}"><img src = "http://i.imgur.com/UMB5c.png" height = "64px" width = "64px"></a>{% endif %}
+				{% if project.demo_url %}<a class = "pull-right" href = "{{project.demo_url}}" ><button class="btn btn-large btn-primary" type="button" style = "padding : 5px 10px">View Demo</button></a>{% endif %}
+				{% if project.name %}<h1>{{project.name}}</h1>{% endif %}
 
-				<h3 id = "authors">By {{project.authors}}. Submitted {{project.sub_date}}</h3>
-				<h3>{{project.pitch}}</h3>
-				<h6 class = "description">{{project.description}}</h6>
-				<iframe class="imgur-album" style = "" width="100%" height="550" frameborder = "0" src="{{project.album_url}}/embed"></iframe>
+				<h3 id = "authors">{% if project.authors %}By {{project.authors}}. {% endif %}{% if project.sub_date %}Submitted {{project.sub_date}}{% endif %}</h3>
+				{% if project.pitch %}<h3>{{project.pitch}}</h3>{% endif %}
+				{% if project.description %}<h6 class = "description">{{project.description}}</h6>{% endif %}
+				{% if project.album_url %}<iframe class="imgur-album" style = "" width="100%" height="550" frameborder = "0" src="{{project.album_url}}/embed"></iframe>{% endif %}
 			</div>
 
 		</div>
