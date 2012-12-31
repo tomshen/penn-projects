@@ -5,9 +5,9 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <meta name="description" content="A showcase for cool projects from the geeks at University of Pennsylvania.">
 	    <meta name="author" content="Ian Sibner">
-	    <link href="../../static/bootstrap/css/bootstrap.css" rel="stylesheet">
-	    <link href="../../static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-	    <link href="../../static/css/style.css" rel="stylesheet">
+	    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+	    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	    <link href="/static/css/style.css" rel="stylesheet">
 	    
 			
 	</head>
@@ -37,7 +37,7 @@
 		        {% for project in latest_projects %}
 		        <a href = "/projects/{{ project.id }}/">
 			        <div class="tile">
-						<img src="http://i.imgur.com/XYgpT.jpg"> <!--must be changed to cover photo reference-->
+						<img src="{{project.thumb_url}}"> <!--must be changed to cover photo reference-->
 						<div class="caption">
 							<h5>{{ project.name }}</h5>
 					    </div>
@@ -51,8 +51,8 @@
 
 
 		<script src="http://code.jquery.com/jquery-latest.js"> </script>
-   	 	<script src="../../static/bootstrap/js/bootstrap.min.js"> </script>
-   	 	<script src="../../static/js/jquery.masonry.js"> </script>
+   	 	<script src="/static/bootstrap/js/bootstrap.min.js"> </script>
+   	 	<script src="/static/js/jquery.masonry.js"> </script>
    	 	<script type="text/javascript">
    	 	$().ready(function(){
    	 		var $container = $('#picture_tiles');

@@ -6,6 +6,7 @@
 <li>Add a favicon</li>
 <li>Submit the finished product to the DP</li>
 <li>Push Pinterest JQuery Plugin</li>
+<li>Learn that markdown != html</li>
 </ul>
 
 

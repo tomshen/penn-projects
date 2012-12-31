@@ -11,6 +11,8 @@ class Project(models.Model):
 	album_url = models.URLField()
 	pitch = models.TextField(max_length=200)
 	source_url = models.URLField()
+	thumb_url = models.URLField()
+	approved = models.BooleanField()
 
 	def __unicode__(self):
 		return self.name
