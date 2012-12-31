@@ -11,3 +11,4 @@ Tom
 ---
 * Append 'i' to Imgur urls
 * Add /about to backend
+* Make sure to trim any user input, especiall comma/newline separated ones
