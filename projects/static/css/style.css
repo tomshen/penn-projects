@@ -111,11 +111,10 @@ position: absolute;
 width: 130px;
 }
 
-.defaultText { 
-	width: 300px; 
+.defaultText {
 }
 
 .defaultTextActive { 
-	color: #a1a1a1; 
+	color: #a1a1a1 !important; 
 	font-style: italic; 
 }
