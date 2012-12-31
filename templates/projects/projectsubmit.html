@@ -58,7 +58,8 @@
 
 
 		<script src="http://code.jquery.com/jquery-latest.js"> </script>
-		<script src="/static/js/bootstrap.min.js"> </script>
+   	 	<script src="/static/bootstrap/js/bootstrap.min.js"> </script>
+		<script src="/static/js/jquery.autosize.js"></script>
 		<script language="javascript">
 		<!--
 		$(document).ready(function()
@@ -67,7 +68,7 @@
 			demoString = "e.g. myawesomesite.com", 
 			descriptionString = "Tell the world what you did and how you did it.",
 			albumString = "Upload your pictures to an album on Imgur.com, then put the link here.",
-			pitchString = "Give us an overview with a ten-second pitch",
+			pitchString = "Give us an overview with a ten-second pitch.",
 			sourceString = "e.g. github.com/tomshen/penn-projects/",
 			thumbnailString = "Your projects preferred thumbnail- e.g. imgur.com/yourURL";
 			//Jeez, I should have put these in an array... dat boilerplate...
@@ -81,7 +82,7 @@
 			$("#id_source_url").attr("title", sourceString);
 			$("#id_thumbnail_url").attr("title", thumbnailString);
 			$("input").addClass("defaultText");
-			$("textarea").addClass("defaultText");
+			$("textarea").addClass("defaultText").autosize();
 
 
 
