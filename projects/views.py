@@ -27,8 +27,12 @@ def projectsubmit(request):
 
             # format the authors list
             al = pd.authors.split()
-            al[-1] = 'and ' + al[-1]
-            pd.authors = ', '.join(al)
+            if(len(al) > 1):
+                al[-1] = 'and ' + al[-1]
+            if(len(al) > 2):
+                pd.authors = ', '.join(al)
+            else:
+                pd.authors = ' '.join(al)
 
             pd.save()
             return HttpResponseRedirect('/')
