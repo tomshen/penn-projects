@@ -12,3 +12,4 @@ Tom
 ---
 * Pagination
 * Submitted flag for projectsubmit
+* Submission should redirect with to the submit page with the flag checked (activating JS function), not to main page
