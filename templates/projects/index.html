@@ -32,24 +32,24 @@
       </div>
     </div>
 
-    	<div id="picture_tiles">
-    		{% if latest_projects %}
-		        {% for project in latest_projects %}
-		        {% if project.approved %}
-			        <a href = "/projects/{{ project.id }}/">
-				        <div class="tile">
-							<img src="{{project.thumbnail_url}}"> <!--must be changed to cover photo reference-->
-							<div class="caption">
-								<h5>{{ project.name }}</h5>
-						    </div>
-						</div>
-					</a>
-				{% endif %}
-				{% endfor %}
-			{% else %}
-			    <h1>No projects are available.</h1>
+	<div id="picture_tiles">
+		{% if latest_projects %}
+	        {% for project in latest_projects %}
+	        {% if project.approved %}
+		        <a href = "/projects/{{ project.id }}/">
+			        <div class="tile">
+						<img src="{{project.thumbnail_url}}"> <!--must be changed to cover photo reference-->
+						<div class="caption">
+							<h5>{{ project.name }}</h5>
+					    </div>
+					</div>
+				</a>
 			{% endif %}
-		</div>
+			{% endfor %}
+		{% else %}
+		    <h1>No projects are available.</h1>
+		{% endif %}
+	</div>
 
 
 		<script src="http://code.jquery.com/jquery-latest.js"> </script>
@@ -60,7 +60,7 @@
    	 		var $container = $('#picture_tiles');
 			$container.imagesLoaded(function(){
 			  $container.masonry({
-			    tileSelector : ".tile",
+			    tileSelector : '.tile',
 			    isAnimated: true,
 			     animationOptions: {
 				    duration: 550,

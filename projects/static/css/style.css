@@ -27,7 +27,7 @@ body {
 }
 
 .tile {
-  width: 15.46666666666666666666666666666%;
+  width: 15.26666666666666666666666666666%;
   margin: 0.6%;
   margin-right : 0;
   padding:0;
@@ -55,10 +55,11 @@ body {
 #picture_tiles{
 	margin-left:0px;
 	padding-left:0px;
+	width:100%;
 }
 
 
-#picture_tiles .caption {
+.caption {
 	text-align: center;
 	text-decoration: none;
 	color: #5C5C5C;
@@ -66,7 +67,8 @@ body {
 	width:100%;
 }
 
-#picture_tiles .caption:hover {
+
+.tile:hover{
 	text-decoration: underline;
 	color: #3C3C3C;
 }
