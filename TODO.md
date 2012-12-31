@@ -7,8 +7,7 @@ Ian
 * Submit the finished product to the DP
 * Figure out what to display after submission is complete
 
-
 Tom
 ---
-*Append 'i.' to Imgur urls
-*Put /about on the backend
+* Append 'i' to Imgur urls
+* Add /about to backend
