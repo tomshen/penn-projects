@@ -46,7 +46,7 @@
 					</p>
 				{% endif %}
 
-				<form action="" method="post">{% csrf_token %}
+				<form action="" method="post" class ="span8 offset2">{% csrf_token %}
 					<table>
 						{{ form.as_p }}
 					</table>
@@ -62,14 +62,23 @@
 		<script language="javascript">
 		<!--
 		$(document).ready(function()
-		{
-			$("#id_authors").val("Separate author names with commas- e.g. Harry, Ron, Hermione");
-			$("#id_demo_url").val("e.g. myawesomesite.com");
-			$("#id_description").val("Tell the world what you did and how you did it.");
-			$("#id_album_url").val("Upload your pictures to an album on Imgur.com, then put the link here.");
-			$("#id_pitch").val("Give us an overview with a ten-second pitch");
-			$("#id_source_url").val("e.g. github.com/tomshen/penn-projects/");
-			$("#id_thumbnail_url").val("Your projects preferred thumbnail- e.g. imgur.com/yourURL");
+		{	var authorString = "Separate author names with commas- e.g. Harry, Ron, Hermione",
+			demoString = "e.g. myawesomesite.com", 
+			descriptionString = "Tell the world what you did and how you did it.",
+			albumString = "Upload your pictures to an album on Imgur.com, then put the link here.",
+			pitchString = "Give us an overview with a ten-second pitch",
+			sourceString = "e.g. github.com/tomshen/penn-projects/",
+			thumbnailString = "Your projects preferred thumbnail- e.g. imgur.com/yourURL";
+
+			$("#id_authors").val(authorString).attr("title", authorString);
+			$("#id_demo_url").val(demoString).attr("title", demoString);
+			$("#id_description").val(descriptionString).attr("title", descriptionString);
+			$("#id_album_url").val(albumString).attr("title", albumString);
+			$("#id_pitch").val(pitchString).attr("title", pitchString);
+			$("#id_source_url").val(sourceString).attr("title", sourceString);
+			$("#id_thumbnail_url").val(thumbnailString).attr("title", thumbnailString);
+			$("input").addClass("defaultText");
+			$("textarea").addClass("defaultText");
 
 
 
