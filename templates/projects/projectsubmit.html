@@ -59,11 +59,18 @@
 
 		<script src="http://code.jquery.com/jquery-latest.js"> </script>
    	 	<script src="/static/bootstrap/js/bootstrap.min.js"> </script>
-		<script src="/static/js/jquery.autosize.js"></script>
-		<script language="javascript">
+		<script src="/static/js/jquery.autosize.js"> </script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			    $('textarea').autosize();  
+			});
+		</script>
+		<script type="text/javascript">
 		<!--
 		$(document).ready(function()
-		{	var nameString = "e.g. My Awesome Project",
+		{
+
+			var nameString = "e.g. My Awesome Project",
 			authorString = "Separate author names with commas- e.g. Harry, Ron, Hermione",
 			demoString = "e.g. myawesomesite.com", 
 			descriptionString = "Tell the world what you did and how you did it.",
@@ -82,7 +89,7 @@
 			$("#id_source_url").attr("title", sourceString);
 			$("#id_thumbnail_url").attr("title", thumbnailString);
 			$("input").addClass("defaultText");
-			$("textarea").addClass("defaultText").autosize();
+			$("textarea").addClass("defaultText");
 
 
 
