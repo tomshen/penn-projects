@@ -26,13 +26,20 @@ def projectsubmit(request):
             pd.approved = False
 
             # format the authors list
-            al = pd.authors.split()
-            if(len(al) > 1):
-                al[-1] = 'and ' + al[-1]
-            if(len(al) > 2):
+            al = pd.authors.strip().replace('\r\n', '*').replace('\r', '*').replace('\n', '*').split('*')
+            print al
+            if len(al) > 1:
+                al[-1] = 'and ' + al[-1].strip()
+
+            if len(al) > 2:
                 pd.authors = ', '.join(al)
             else:
                 pd.authors = ' '.join(al)
+
+            # make the thumbnail url a direct link if not already
+            thumb = pd.thumbnail_url.strip()
+            if 'imgur' in thumb and 'i.' not in thumb:
+                pd.thumbnail_url = 'i.' + thumb.replace('https://', '').replace('http://', '')
 
             pd.save()
             return HttpResponseRedirect('/')

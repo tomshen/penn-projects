@@ -1,6 +1,10 @@
 from projects.models import Project
 from django.contrib import admin
 
+def approve(modeladmin, request, queryset):
+	queryset.update(approved = True)
+approve.short_description = "Approve for display on the main page"
+
 class ProjectAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,              {'fields':['approved', 'name', 'authors', 'pitch']}),
@@ -10,5 +14,6 @@ class ProjectAdmin(admin.ModelAdmin):
     list_filter = ['sub_date', 'approved']
     search_fields = ['name', 'authors']
     date_hierarchy = 'sub_date'
+    actions = [approve]
 
 admin.site.register(Project, ProjectAdmin)

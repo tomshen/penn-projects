@@ -1,5 +1,9 @@
 from django.db import models
 
+APPROVAL = (
+	(True, 'Approved'),
+	(False, 'Pending approval'))
+
 class Project(models.Model):
 	name = models.CharField('project name', max_length=50)
 	sub_date = models.DateTimeField('date submitted', editable=False)
@@ -10,7 +14,7 @@ class Project(models.Model):
 	pitch = models.TextField(max_length=200)
 	source_url = models.URLField()
 	thumbnail_url = models.URLField()
-	approved = models.BooleanField()
+	approved = models.BooleanField(choices=APPROVAL)
 
 	def __unicode__(self):
 		return self.name

@@ -1,77 +1,77 @@
 <hmtl>
 	<head>
 		<meta charset="utf-8">
-	    <title>Penn Projects</title>
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <meta name="description" content="A showcase for cool projects from the geeks at University of Pennsylvania.">
-	    <meta name="author" content="Ian Sibner">
-	    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
-	    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-	    <link href="/static/css/style.css" rel="stylesheet">
-	    
+		<title>Penn Projects</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="A showcase for cool projects from the geeks at University of Pennsylvania.">
+		<meta name="author" content="Ian Sibner">
+		<link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="/static/css/style.css" rel="stylesheet">
+		
 			
 	</head>
 	<body>
 		<div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#" style ="font-size : 22px">Penn Projects</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="/about">About DinPhil</a></li>
-              <li><a href="/submit">Submit Project</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</a>
+					<a class="brand" href="#" style ="font-size : 22px">Penn Projects</a>
+					<div class="nav-collapse collapse">
+					<ul class="nav">
+					  <li class="active"><a href="#">Home</a></li>
+					  <li><a href="/about">About DinPhil</a></li>
+					  <li><a href="/submit">Submit Project</a></li>
+					</ul>
+					</div><!--/.nav-collapse -->
+				</div>
+			</div>
+		</div>
 
 	<div id="picture_tiles">
 		{% if latest_projects %}
-	        {% for project in latest_projects %}
-	        {% if project.approved %}
-		        <a href = "/projects/{{ project.id }}/">
-			        <div class="tile">
+			{% for project in latest_projects %}
+			{% if project.approved %}
+				<a href = "/projects/{{ project.id }}/">
+					<div class="tile">
 						<img src="{{project.thumbnail_url}}"> <!--must be changed to cover photo reference-->
 						<div class="caption">
 							<h5>{{ project.name }}</h5>
-					    </div>
+						</div>
 					</div>
 				</a>
 			{% endif %}
 			{% endfor %}
 		{% else %}
-		    <h1>No projects are available.</h1>
+			<h1>No projects are available.</h1>
 		{% endif %}
 	</div>
 
 
 		<script src="http://code.jquery.com/jquery-latest.js"> </script>
-   	 	<script src="/static/bootstrap/js/bootstrap.min.js"> </script>
-   	 	<script src="/static/bootstrap/js/jquery.masonry.js"> </script>
-   	 	<script type="text/javascript">
-   	 	$().ready(function(){
-   	 		var $container = $('#picture_tiles');
+		<script src="/static/bootstrap/js/bootstrap.min.js"> </script>
+		<script src="/static/bootstrap/js/jquery.masonry.js"> </script>
+		<script type="text/javascript">
+		$().ready(function(){
+			var $container = $('#picture_tiles');
 			$container.imagesLoaded(function(){
 			  $container.masonry({
-			    itemSelector : '.tile',
-			    isAnimated: true,
-			     animationOptions: {
-				    duration: 550,
-				    queue: true
+				itemSelector : '.tile',
+				isAnimated: true,
+				 animationOptions: {
+					duration: 550,
+					queue: true
 				  },
-			    columnWidth: function( containerWidth ) {
-				    return containerWidth / 6;
+				columnWidth: function( containerWidth ) {
+					return containerWidth / 6;
 				  }
 			  });
 			});
 		});
-   	 	</script>
+		</script>
 	</body>
 </html>
