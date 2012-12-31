@@ -91,6 +91,8 @@
 		<script type="text/javascript">
 			$(document).ready(function(){
 			    $("textarea").autosize();  
+			    $("input").addClass("defaultText").addClass("defaultTextActive");
+				$("textarea").addClass("defaultText").addClass("defaultTextActive");
 			});
 		</script>
 		<script type="text/javascript">
@@ -116,8 +118,6 @@
 			$("#id_pitch").attr("title", pitchString);
 			$("#id_source_url").attr("title", sourceString);
 			$("#id_thumbnail_url").attr("title", thumbnailString);
-			$("input").addClass("defaultText");
-			$("textarea").addClass("defaultText");
 
 
 
