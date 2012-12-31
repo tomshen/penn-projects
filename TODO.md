@@ -10,5 +10,5 @@ Ian
 
 Tom
 ---
-*Append 'i.' to Imgur urls.
+*Append 'i.' to Imgur urls
 *Put /about on the backend
