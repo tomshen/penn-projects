@@ -12,3 +12,9 @@ Ian
 * Learn that markdown != html
 * Figure out what to display after submission is complete
 * Prettify admin interface
+
+
+Tom
+---
+*Append 'i.' to Imgur urls.
+*Put /about on the backend
