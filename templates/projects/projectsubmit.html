@@ -60,6 +60,33 @@
 		<script src="http://code.jquery.com/jquery-latest.js"> </script>
    	 	<script src="/static/bootstrap/js/bootstrap.min.js"> </script>
 		<script src="/static/bootstrap/js/jquery.autosize.js"> </script>
+		
+			<script src="/static/js/bootbox.min.js"> </script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					bootbox.dialog("Project submission successful!", [{
+					    "label" : "Submit another project",
+					    "class" : "btn-success",
+					    "callback": function() {
+					        window.location.replace("/submit");
+					    }
+					}, {
+					    "label" : "Penn Projects home",
+					    "class" : "btn-danger",
+					    "callback": function() {
+					        window.location.replace("/");
+					    }
+					}, {
+					    "label" : "GO DANCING!",
+					    "class" : "btn-primary",
+					    "callback": function() {
+					        window.location.replace("http://www.youtube.com/watch?v=ZZ5LpwO-An4");
+					    }
+					}]);
+
+
+				});
+			</script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 			    $("textarea").autosize();  
