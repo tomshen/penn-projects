@@ -12,3 +12,7 @@ Tom
 * Append 'i' to Imgur urls
 * Add /about to backend
 * Make sure to trim any user input, especiall comma/newline separated ones
+
+Both
+---
+* Go back and remove extraneous files. We seem to have collected a lot of them...
