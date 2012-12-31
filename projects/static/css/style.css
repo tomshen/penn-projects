@@ -100,3 +100,22 @@ button{
 	height: 64px;
 	margin-right: 15px;
 }
+
+input, textarea {
+margin-left: 130px;
+width: 70%;
+}
+
+label {
+position: absolute;
+width: 130px;
+}
+
+.defaultText { 
+	width: 300px; 
+}
+
+.defaultTextActive { 
+	color: #a1a1a1; 
+	font-style: italic; 
+}
