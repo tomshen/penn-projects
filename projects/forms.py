@@ -13,7 +13,15 @@ class ProjectForm(ModelForm):
         self.fields['authors'].widget.attrs['rows'] = 3
         self.fields['description'].widget.attrs['rows'] = 10
         self.fields['pitch'].widget.attrs['rows'] = 3
-        self.fields['demo_url'].required = False
-        self.fields['album_url'].required = False
-        self.fields['source_url'].required = False
-        self.fields['thumbnail_url'].required = False
+
+    def clean(self):
+        super(ProjectForm, self).clean()
+        if 'demo_url' in self._errors:
+            del self._errors['demo_url']
+        if 'album_url' in self._errors:
+            del self._errors['album_url']
+        if 'source_url' in self._errors:
+            del self._errors['source_url']
+        if 'thumbnail_url' in self._errors:
+            del self._errors['thumbnail_url']
+        return self.cleaned_data
