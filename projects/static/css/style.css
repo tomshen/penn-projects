@@ -67,12 +67,12 @@ body {
 	width:100%;
 }
 
-.caption .pagination{
+#pagination, .step-links {
 	text-decoration: underline;
 	color: #0088cc;
 }
 
-.caption .pagination .current{
+.current{
 	text-decoration: none;
 	color: #999999;
 	font-size: 150%;
