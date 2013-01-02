@@ -37,7 +37,11 @@
 			{% for project in page_projects %}
 				<a href = "/projects/{{ project.id }}/">
 					<div class="tile">
+						{% if project.thumbnail_url %}
 						<img src="{{project.thumbnail_url}}"> <!--must be changed to cover photo reference-->
+						{% else %}
+						<img src="http://i.imgur.com/UowPi.gif">
+						{% endif %}
 						<div class="caption">
 							<h5>{{ project.name }}</h5>
 						</div>
