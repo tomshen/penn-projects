@@ -67,6 +67,17 @@ body {
 	width:100%;
 }
 
+.caption .pagination{
+	text-decoration: underline;
+	color: #0088cc;
+}
+
+.caption .pagination .current{
+	text-decoration: none;
+	color: #999999;
+	font-size: 150%;
+}
+
 
 .tile:hover{
 	text-decoration: underline;
