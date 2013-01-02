@@ -128,3 +128,11 @@ width: 130px;
 	color: #a1a1a1 !important; 
 	font-style: italic; 
 }
+
+.brand .footer {
+	text-align:center;
+	width: 100%;
+	margin: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
