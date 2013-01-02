@@ -67,6 +67,10 @@ body {
 	width:100%;
 }
 
+.step-links a, .step-links span{
+	margin-right: .3em;
+}
+
 .current{
 	text-decoration: none;
 	color: #999999;
