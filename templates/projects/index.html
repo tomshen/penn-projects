@@ -48,15 +48,19 @@
 			<h1>No projects are available.</h1>
 		{% endif %}
 	</div>
-	<div class="pagination caption">
+	<div class="pagination">
 		<span class="step-links">
-			{% for page_num in page_projects.page_range %}
-				{% if page_projects.number != page_num %}
-					<a href="?page={{ page_num }}">{{ page_num }} </a>
-				{% else %}
-					<span class="current">{{ page_num }} </span> 
-				{% endif %}
-			{% endfor %}
+			{% if page_projects.has_previous %}
+				<a href="?page={{ page_projects.previous_page_number }}">previous</a>
+			{% endif %}
+
+			<span class="current">
+				Page {{ page_projects.number }} of {{ page_projects.paginator.num_pages }}.
+			</span>
+
+			{% if page_projects.has_next %}
+				<a href="?page={{ page_projects.next_page_number }}">next</a>
+			{% endif %}
 		</span>
 	</div>
 
