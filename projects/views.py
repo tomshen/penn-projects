@@ -12,7 +12,7 @@ def index(request):
     for project in latest_projects:
         if project.approved:
             approved_projects.append(project)
-    paginator = Paginator(approved_projects, 1)
+    paginator = Paginator(approved_projects, 20)
     page = request.GET.get('page')
     try:
         page_projects = paginator.page(page)
