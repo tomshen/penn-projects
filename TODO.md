@@ -11,7 +11,3 @@ Ian
 Tom
 ---
 * Pagination
-* Submitted flag for projectsubmit
-* Submission should redirect with to the submit page with the flag checked (activating JS function), not to main page
-* Just appending i. to imgur.com/whatever doesn't work -- can't append necessary filename!
-* Users should be able to leave certain fields intentionally blank - fields like demoURL, thumbnail_url, etc. are not strictly necessary. (Maybe check if user is sure if they are not filled in)

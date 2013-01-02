@@ -40,9 +40,11 @@ def projectsubmit(request):
             thumb = pd.thumbnail_url.strip()
             if 'imgur' in thumb and 'i.' not in thumb:
                 pd.thumbnail_url = 'i.' + thumb.replace('https://', '').replace('http://', '')
+            if '.jpg' not in pd.thumbnail_url:
+                pd.thumbnail_url += '.jpg'
 
             pd.save()
-            return HttpResponseRedirect('/')
+            return render(request, 'projects/projectsubmit.html', {'submitted': True})
     else:
         form = ProjectForm()
-    return render(request, 'projects/projectsubmit.html', {'form': form})
+    return render(request, 'projects/projectsubmit.html', {'form': form, 'submitted': False})

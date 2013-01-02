@@ -7,13 +7,13 @@ APPROVAL = (
 class Project(models.Model):
 	name = models.CharField('project name', max_length=50)
 	sub_date = models.DateTimeField('date submitted', editable=False)
-	authors = models.TextField(max_length=100) # list of author names separated by commas
-	demo_url = models.URLField()
+	authors = models.TextField(max_length=100)
+	demo_url = models.URLField(blank=True)
 	description = models.TextField()
-	album_url = models.URLField()
+	album_url = models.URLField(blank=True)
 	pitch = models.TextField(max_length=200)
-	source_url = models.URLField()
-	thumbnail_url = models.URLField()
+	source_url = models.URLField(blank=True)
+	thumbnail_url = models.URLField(blank=True)
 	approved = models.BooleanField(choices=APPROVAL)
 
 	def __unicode__(self):
