@@ -51,11 +51,12 @@ def projectsubmit(request):
                 pd.authors = ' '.join(al)
 
             # make the thumbnail url a direct link if not already
-            thumb = pd.thumbnail_url.strip()
-            if 'imgur' in thumb and 'i.' not in thumb:
-                pd.thumbnail_url = 'i.' + thumb.replace('https://', '').replace('http://', '')
-            if '.jpg' not in pd.thumbnail_url:
-                pd.thumbnail_url += '.jpg'
+            if pd.thumbnail_url:
+                thumb = pd.thumbnail_url.strip()
+                if 'imgur' in thumb and 'i.' not in thumb:
+                    pd.thumbnail_url = 'i.' + thumb.replace('https://', '').replace('http://', '')
+                if '.jpg' not in pd.thumbnail_url:
+                    pd.thumbnail_url += '.jpg'
 
             pd.save()
             return render(request, 'projects/projectsubmit.html', {'submitted': True})
