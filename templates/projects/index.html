@@ -51,7 +51,7 @@
 	<div class="pagination caption">
 		<span class="step-links">
 			{% for pagenum in page_projects.paginator.page_range %}
-				{% if page_projects.has_previous %}
+				{% if page_projects.number != pagenum %}
 					<a href="?page={{ pagenum }}">{{ pagenum }} </a>
 				{% else %}
 					<span class="current">
