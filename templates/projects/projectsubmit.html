@@ -89,7 +89,7 @@
 		{% endif %}
 		<script type="text/javascript">
 			$(document).ready(function(){
-			    $("textarea").autosize();  
+			    $("textarea").autosize({append: "\n"});  
 			    $("input").addClass("defaultText").addClass("defaultTextActive");
 				$("textarea").addClass("defaultText").addClass("defaultTextActive");
 			});
