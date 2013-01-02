@@ -48,14 +48,7 @@
 
 				<form action="" method="post" class ="span8 offset2">
 					{% csrf_token %}
-					<p><label for="id_name">Project name:</label> <input id="id_name" type="text" name="name" maxlength="50" /></p>
-					<p><label for="id_authors">Authors:</label> <textarea id="id_authors" rows="3" cols="40" name="authors"></textarea></p>
-					<p><label for="id_demo_url">Demo url:</label> <input id="id_demo_url" type="text" name="demo_url" maxlength="200" /></p>
-					<p><label for="id_description">Description:</label> <textarea id="id_description" rows="3" cols="40" name="description"></textarea></p>
-					<p><label for="id_album_url">Album url:</label> <input id="id_album_url" type="text" name="album_url" maxlength="200" /></p>
-					<p><label for="id_pitch">Pitch:</label> <textarea id="id_pitch" rows="3" cols="40" name="pitch"></textarea></p>
-					<p><label for="id_source_url">Source url:</label> <input id="id_source_url" type="text" name="source_url" maxlength="200" /></p>
-					<p><label for="id_thumbnail_url">Thumbnail url:</label> <input id="id_thumbnail_url" type="text" name="thumbnail_url" maxlength="200" /></p>
+					{{ form.as_p }}
 					<input type="submit" value="Submit">
 				</form>
 			</div>
