@@ -50,17 +50,15 @@
 	</div>
 	<div class="pagination caption">
 		<span class="step-links">
-			{% if page_projects.has_previous %}
-				<a href="?page={{ page_projects.previous_page_number }}">previous</a>
-			{% endif %}
-
-			<span class="current">
-				Page {{ page_projects.number }} of {{ page_projects.paginator.num_pages }}.
-			</span>
-
-			{% if page_projects.has_next %}
-				<a href="?page={{ page_projects.next_page_number }}">next</a>
-			{% endif %}
+			{% for pagenum in page_projects.paginator.page_range %}
+				{% if page_projects.has_previous %}
+					<a href="?page={{ pagenum }}">{{ pagenum }} </a>
+				{% else %}
+					<span class="current">
+					{{ pagenum }}
+					</span>
+				{% endif %}
+			{% endfor %}
 		</span>
 	</div>
 
