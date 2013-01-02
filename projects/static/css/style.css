@@ -67,11 +67,6 @@ body {
 	width:100%;
 }
 
-#pagination, .step-links {
-	text-decoration: underline;
-	color: #0088cc;
-}
-
 .current{
 	text-decoration: none;
 	color: #999999;
