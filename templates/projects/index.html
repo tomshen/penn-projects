@@ -52,9 +52,9 @@
 		<span class="step-links">
 			{% for pagenum in page_projects.paginator.page_range %}
 				{% if page_projects.number != pagenum %}
-					<a href="?page={{ pagenum }}">{{ pagenum }}  </a>
+					<a href="?page={{ pagenum }}" style="text-decoration:underline">{{ pagenum }}  </a>
 				{% else %}
-					<span class="current" style="text-decoration:underline">{{ pagenum }}  </span>
+					<span class="current">{{ pagenum }}  </span>
 				{% endif %}
 			{% endfor %}
 		</span>
