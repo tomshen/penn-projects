@@ -1,8 +1,13 @@
 body {
-	        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
 	        padding-right: 0.7%;
 }
-
+.navbar {
+	margin-top: 60px;
+}
+html,body {
+        height: 100%;
+        /* The html and body elements cannot have any padding or margin. */
+      }
 
 
 #picture_tiles .row-fluid{
