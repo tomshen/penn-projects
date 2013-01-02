@@ -2,14 +2,28 @@ from django.template import Context, loader
 from projects.models import Project
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404, render
-from projects.forms import ProjectForm
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils import timezone
+from projects.forms import ProjectForm
 
 def index(request):
-    latest_projects = Project.objects.all().order_by('-sub_date')[:5]
+    latest_projects = Project.objects.all().order_by('-sub_date')
+    approved_projects = []
+    for project in latest_projects:
+        if project.approved:
+            approved_projects.append(project)
+    paginator = Paginator(approved_projects, 2)
+    page = request.GET.get('page')
+    try:
+        page_projects = paginator.page(page)
+    except PageNotAnInteger:
+        page_projects = paginator.page(1)
+    except EmptyPage:
+        page_projects = paginator.page(paginator.num_pages)
+
     t = loader.get_template('projects/index.html')
     c = Context({
-        'latest_projects': latest_projects,
+        'page_projects': page_projects,
     })
     return HttpResponse(t.render(c))
 

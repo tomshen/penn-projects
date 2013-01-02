@@ -33,9 +33,8 @@
 		</div>
 
 	<div id="picture_tiles">
-		{% if latest_projects %}
-			{% for project in latest_projects %}
-			{% if project.approved %}
+		{% if page_projects %}
+			{% for project in page_projects %}
 				<a href = "/projects/{{ project.id }}/">
 					<div class="tile">
 						<img src="{{project.thumbnail_url}}"> <!--must be changed to cover photo reference-->
@@ -44,13 +43,26 @@
 						</div>
 					</div>
 				</a>
-			{% endif %}
 			{% endfor %}
 		{% else %}
 			<h1>No projects are available.</h1>
 		{% endif %}
 	</div>
+	<div class="pagination">
+		<span class="step-links">
+			{% if page_projects.has_previous %}
+				<a href="?page={{ page_projects.previous_page_number }}">previous</a>
+			{% endif %}
 
+			<span class="current">
+				Page {{ page_projects.number }} of {{ page_projects.paginator.num_pages }}.
+			</span>
+
+			{% if page_projects.has_next %}
+				<a href="?page={{ page_projects.next_page_number }}">next</a>
+			{% endif %}
+		</span>
+	</div>
 
 		<script src="http://code.jquery.com/jquery-latest.js"> </script>
 		<script src="/static/bootstrap/js/bootstrap.min.js"> </script>
