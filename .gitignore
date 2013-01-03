@@ -1,3 +1,7 @@
 venv
 test
 *.pyc
+secret.py
+
+submit.*
+.gitignore2

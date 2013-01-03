@@ -1,5 +1,7 @@
 # Django settings for pennprojects project.
 
+from secret import key
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -78,7 +80,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'hrjmavp1wez(n_%ne1#70l20&amp;i2)^j-93%t_@xo#7u#kzcjluf'
+SECRET_KEY = key
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
