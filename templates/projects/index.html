@@ -25,13 +25,37 @@
 					<ul class="nav">
 					  <li class="active"><a href="#">Home</a></li>
 					  <li><a href="/about">About DinPhil</a></li>
-					  <li><a href="/submit">Submit Project</a></li>
+					  <li><a href="/submit">Submit a Project</a></li>
 					</ul>
 					</div><!--/.nav-collapse -->
 				</div>
 			</div>
 		</div>
-
+	<div class="pagination center">
+	  <ul>
+	  	<li>
+		    {% if page_projects.has_previous %}
+	            <a href="?page={{ page_projects.previous_page_number }}">«</a>
+	        {% else %}
+	        	<span class="current">«</span>
+	        {% endif %}
+	    </li>
+	    {% for pagenum in page_projects.paginator.page_range %}
+			{% if page_projects.number != pagenum %}
+				<li><a href="?page={{ pagenum }}" style="text-decoration:underline">{{ pagenum }}</a></li>
+			{% else %}
+				<li><span class="current">{{ pagenum }}</span></li>
+			{% endif %}
+		{% endfor %}
+		<li>
+		    {% if page_projects.has_next %}
+	            <a href="?page={{ page_projects.next_page_number }}">»</a>
+	        {% else %}
+	        	<span class="current">»</span>
+	        {% endif %}
+	    </li>
+	  </ul>
+	</div>
 	<div id="picture_tiles">
 		{% if page_projects %}
 			{% for project in page_projects %}
@@ -51,17 +75,7 @@
 		{% else %}
 			<h1>No projects are available.</h1>
 		{% endif %}
-	</div>
-	<div class="caption" id="pagination">
-		<span class="step-links">
-			{% for pagenum in page_projects.paginator.page_range %}
-				{% if page_projects.number != pagenum %}
-					<a href="?page={{ pagenum }}" style="text-decoration:underline">{{ pagenum }}</a>
-				{% else %}
-					<span class="current">{{ pagenum }}</span>
-				{% endif %}
-			{% endfor %}
-		</span>
+		
 	</div>
 
 	<div class="navbar navbar-fixed-bottom">

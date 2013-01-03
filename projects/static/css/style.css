@@ -1,7 +1,11 @@
 body {
 	        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-	        padding-bottom: 60px;
+	        padding-bottom: 30px;
 	        padding-right: 0.7%;
+}
+
+.navbar-fixed-top .brand {
+	font-size: 22px;
 }
 
 
@@ -57,6 +61,7 @@ body {
 	margin-left:0px;
 	padding-left:0px;
 	width:100%;
+	margin-top:25px;
 }
 
 
@@ -124,17 +129,39 @@ position: absolute;
 width: 130px;
 }
 
+.defaultText{
+	/*This is just a finder class for JQuery, so no style is added here.
+	.defaultTextActive handles the styling for unfilled form elements*/
+}
+
 .defaultTextActive { 
 	color: #a1a1a1 !important; 
 	font-style: italic; 
+}
+
+#error-message {
+	color:red;
+	font-weight: bolder;
+}
+
+.errorlist{
+	list-style-type: none;
+	color: red;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.navbar-fixed-bottom {	
+	min-height: 25px;
+	height: 25;
 }
 
 #footer {
 	text-align:center;
 	width: 100%;
 	margin: 0;
-	padding-left: 0;
-	padding-right: 0;
+	font-size: 100%;
+	padding: 0;
 }
 
 .no-shadow{
@@ -142,3 +169,13 @@ width: 130px;
 	-moz-box-shadow: none !important;
 	box-shadow: none !important;
 }
+
+.pagination.center,
+.pagination.center ul {
+    float: left;
+    position: relative;
+    margin: -5px 0px auto;
+    padding:0;
+}
+.pagination.center { left: 50%; }
+.pagination.center ul { left: -50%; }
