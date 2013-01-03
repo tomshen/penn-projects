@@ -4,8 +4,8 @@ body {
 	        padding-right: 0.7%;
 }
 
-.navbar-fixed-top.brand {
-	font-size: 22px !important;
+.navbar-fixed-top .brand {
+	font-size: 22px;
 }
 
 
