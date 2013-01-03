@@ -41,7 +41,7 @@
 		<div class = "container-fluid" id = "form">
 			<div class = "row-fluid">
 				{% if form.errors %}
-					<p style="color: red;">
+					<p id="error-message">
 						Please correct the error{{ form.errors|pluralize }} below.
 					</p>
 				{% endif %}
@@ -91,6 +91,7 @@
 			$(document).ready(function(){
 			    $("textarea").autosize({append: "\n"});  
 			    $("input").addClass("defaultText").addClass("defaultTextActive");
+			    $("input").last().removeClass("defaultText").removeClass("defaultTextActive");
 				$("textarea").addClass("defaultText").addClass("defaultTextActive");
 			});
 		</script>
@@ -106,36 +107,39 @@
 			albumString = "Upload your pictures to an album on imgur.com, then put the link here.",
 			pitchString = "Give us an overview with a ten-second pitch.",
 			sourceString = "e.g. github.com/tomshen/penn-projects/",
-			thumbnailString = "Your projects preferred thumbnail- e.g. imgur.com/yourURL";
+			thumbnailString = "Your project's preferred thumbnail- e.g. imgur.com/yourURL";
 			//Jeez, I should have put these in an array... dat boilerplate...
 
-			$("#id_name").attr("title", nameString);
-			$("#id_authors").attr("title", authorString);
-			$("#id_demo_url").attr("title", demoString);
-			$("#id_description").attr("title", descriptionString);
-			$("#id_album_url").attr("title", albumString);
-			$("#id_pitch").attr("title", pitchString);
-			$("#id_source_url").attr("title", sourceString);
-			$("#id_thumbnail_url").attr("title", thumbnailString);
+			$("#id_name").attr({title:nameString});
+			$("#id_authors").attr({title:authorString});
+			$("#id_demo_url").attr({title:demoString});
+			$("#id_description").attr({title:descriptionString});
+			$("#id_album_url").attr({title:albumString});
+			$("#id_pitch").attr({title:pitchString});
+			$("#id_source_url").attr({title:sourceString});
+			$("#id_thumbnail_url").attr({title:thumbnailString});
 
 
 
 		    $(".defaultText").focus(function(srcc)
 		    {
-		        if ($(this).val() == $(this)[0].title)
+		        if ($(this).attr("placeholder") == $(this).attr("title"))
 		        {
 		            $(this).removeClass("defaultTextActive");
-		            $(this).val("");
+		            $(this).removeAttr("placeholder");
 		        }
 		    });
 		    
 		    $(".defaultText").blur(function()
-		    {
-		        if ($(this).val() == "")
+		    {	
+		    	var currentVal = $(this).val().trim();
+		        if (currentVal == "")
 		        {
 		            $(this).addClass("defaultTextActive");
-		            $(this).val($(this)[0].title);
+		            var titleString = $(this).attr("title");
+		            $(this).attr("placeholder", titleString);
 		        }
+		        $(this).val(currentVal);//Trim value string
 		    });
 		    
 		    $(".defaultText").blur();        
