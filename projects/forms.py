@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from projects.models import Project
-from django.utils import timezone
+from django.utils.html import strip_tags
 
 class ProjectForm(ModelForm):
 
@@ -24,4 +24,7 @@ class ProjectForm(ModelForm):
             del self._errors['source_url']
         if 'thumbnail_url' in self._errors:
             del self._errors['thumbnail_url']
+
+        for k in self.cleaned_data.keys():
+            self.cleaned_data[k] = strip_tags(self.cleaned_data[k])
         return self.cleaned_data
