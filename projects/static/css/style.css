@@ -8,6 +8,9 @@ body {
 	font-size: 22px;
 }
 
+input {
+	height:auto !important;
+}
 
 
 #picture_tiles .row-fluid{
