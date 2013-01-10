@@ -182,3 +182,9 @@ width: 130px;
 }
 .pagination.center { left: 50%; }
 .pagination.center ul { left: -50%; }
+
+.tagline {
+    margin: 1em 0em 0em 4em;
+    color: rgb(103, 103, 103);
+    font-size: 24px;
+}
