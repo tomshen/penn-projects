@@ -6,6 +6,8 @@ body {
 
 .navbar-fixed-top .brand {
 	font-size: 22px;
+	background: gray;
+	padding: 13px 20px;
 }
 
 input {
