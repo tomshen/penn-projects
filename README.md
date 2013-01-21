@@ -1,4 +1,3 @@
-penn-projects
-=============
+# Penn Projects
 
-Source code behind penn-projects.herokuapp.com
+Source code behind [Penn Projects](http://www.pennprojects.com).
